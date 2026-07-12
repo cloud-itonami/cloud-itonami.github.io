@@ -126,7 +126,15 @@
     [:ol
      [:li "vertical を選び、デモとテストスイートを動かす"]
      [:li "その repo の " [:code "docs/operator-quickstart.md"] " に従って fork → 自分のデータ → 自分のデプロイ"]
-     [:li "各 repo の " [:code "docs/business-model.md"] " に価格の形・ユニットエコノミクス・認証ラダー(itonami.cloud)"]]
+     [:li "各 repo の " [:code "docs/business-model.md"] " に価格の形・ユニットエコノミクス・認証ラダー(itonami.cloud)"]
+     [:li "認証・managed 提供・導入支援に関心があれば、各 repo の "
+      [:strong "operator-interest issue"] " から連絡(例: "
+      [:a {:href "https://github.com/cloud-itonami/cloud-itonami-isic-6399/issues/new?template=operator-interest.yml"} "Meta Job Search"]
+      " / "
+      [:a {:href "https://github.com/cloud-itonami/cloud-itonami-isic-6310/issues/new?template=operator-interest.yml"} "Talent Board"]
+      " / "
+      [:a {:href "https://github.com/cloud-itonami/cloud-itonami-isic-7810/issues/new?template=operator-interest.yml"} "Placement Desk"]
+      ")"]]
 
     [:footer
      [:p "このページは " [:code "web/generate.cljs"] " (nbb) が registry から生成し、絞り込みは "
