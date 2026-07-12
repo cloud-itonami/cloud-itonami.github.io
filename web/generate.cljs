@@ -30,7 +30,12 @@
 (def industries (:industries registry))
 (def implemented (vec (filter #(= :implemented (:maturity %)) industries)))
 (def n-implemented (count implemented))
+(def n-blueprint (count (filter #(= :blueprint (:maturity %)) industries)))
 (def n-total (count industries))
+;; :spec = everything not yet at blueprint/implemented tier (matches
+;; kotoba.industry/maturity-of's default-to-:spec semantics closely
+;; enough for an honest headline count).
+(def n-spec (- n-total n-implemented n-blueprint))
 
 (defn entry->json [e]
   {:id (:id e) :name (:name e)
@@ -95,7 +100,9 @@
       [:a {:href "https://github.com/kotoba-lang/industry"} "kotoba-lang/industry"]
       " のレジストリ(機械可読の SSoT、全 " n-total " 業種)から生成されています — 手書きではありません。"
       "各実装は同一アーキテクチャ: LLM advisor は提案のみ・独立ガバナー(HARD check は人間でも覆せない)・"
-      "実世界の行為は常時人間承認・追記専用監査台帳。AGPL-3.0 で fork して自分の事業として運営できます。"]]
+      "実世界の行為は常時人間承認・追記専用監査台帳。AGPL-3.0 で fork して自分の事業として運営できます。"]
+     [:p.sub "成熟度の内訳(正直な現在地): implemented " n-implemented
+      " · blueprint " n-blueprint " · spec " n-spec " / 全 " n-total " 業種。"]]
 
     [:h2 "フラッグシップ・ライブデモ(実 actor の実行証跡)"]
     [:div.card
