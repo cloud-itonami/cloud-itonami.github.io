@@ -104,7 +104,10 @@
      [:p.sub "成熟度の内訳(正直な現在地): implemented " n-implemented
       " · blueprint " n-blueprint " · spec " n-spec " / 全 " n-total " 業種。"]]
 
-    [:h2 "フラッグシップ・ライブデモ(実 actor の実行証跡)"]
+    [:h2 "Sales wedge — 購入・運用支援する旗艦業種"]
+    [:p.sub "cloud-itonami が直接販売・運用支援するのは下記の旗艦ペア（Indeed 型 / kaonavi 型）です。"
+      "狭い楔(wedge)としてここに集中し、残りの実装は下記 "
+      [:strong "Library"] "（fork 自由・直接販売対象外）として公開します。"]
     [:div.card
      [:h3 [:a {:href "/cloud-itonami-isic-6399/"} "Meta Job Search"] " — Indeed 型求人アグリゲーターの置き換え"]
      [:p.meta "掲載拒否理由(募集終了・賃金不一致・転載許諾・差別広告)を実判定つきで公開。"
@@ -114,7 +117,7 @@
      [:p.meta "保護属性は評価・配置転換の根拠にできず、帳票は目的に許された列のみ。"
       "人材データは自分の Store に残る。配置転換は常時人間承認 + from/to/承認者の台帳化。"]]
 
-    [:h2 (str "実装済み actor 一覧 (" n-implemented ")")]
+    [:h2 (str "Library — 全 actor 実装（fork 自由・直接販売対象外）· " n-implemented " implemented")]
     [:div.search
      [:input {:id "q" :type "search" :placeholder "ISIC コード・名前で絞り込み…" :autocomplete "off"}]]
     [:table
