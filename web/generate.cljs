@@ -42,6 +42,8 @@
    :repo (:repo e)
    :demo (:demo e)})
 
+(def demo-urls (vec (keep :demo industries)))
+
 (def stylesheet
   (css/style-node
    {:rules
@@ -153,4 +155,20 @@
 
 (fs/writeFileSync "../index.html" (str "<!doctype html>\n" (html/render page) "\n"))
 (fs/copyFileSync "catalog.cljs" "../catalog.cljs")
-(println (str "wrote index.html (" n-implemented " implemented / " n-total " industries)"))
+
+;; sitemap.xml / robots.txt -- generated from the same registry.edn :demo links
+;; the catalog table renders (never hand-typed, can't drift from the registry).
+;; Only the 3 flagships carry a :demo entry today; as more verticals earn one
+;; (product-score climbs, ADR-2607121700-style), they appear here automatically.
+(def sitemap-urls (into ["https://cloud-itonami.github.io/"] demo-urls))
+(defn url-entry [u] (str "  <url><loc>" u "</loc></url>"))
+(fs/writeFileSync "../sitemap.xml"
+                   (str "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                        "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
+                        (apply str (map #(str (url-entry %) "\n") sitemap-urls))
+                        "</urlset>\n"))
+(fs/writeFileSync "../robots.txt"
+                   (str "User-agent: *\nAllow: /\nSitemap: https://cloud-itonami.github.io/sitemap.xml\n"))
+
+(println (str "wrote index.html (" n-implemented " implemented / " n-total " industries), "
+              "sitemap.xml (" (count sitemap-urls) " urls), robots.txt"))
