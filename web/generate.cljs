@@ -135,7 +135,7 @@
     [:ol
      [:li "vertical を選び、デモとテストスイートを動かす"]
      [:li "その repo の " [:code "docs/operator-quickstart.md"] " に従って fork → 自分のデータ → 自分のデプロイ"]
-     [:li "各 repo の " [:code "docs/business-model.md"] " に価格の形・ユニットエコノミクス・認証ラダー(itonami.cloud)"]
+     [:li "価格の形・認証ラダー(itonami.cloud) は " [:code "docs/business-model.md"] " に — 旗艦3業種は手書きの domain-deep 版、他の actor は registry+blueprint からの生成 baseline（ユニットエコノミクスは illustrative・計測値ではない）"]
      [:li "認証・managed 提供・導入支援に関心があれば、各 repo の "
       [:strong "operator-interest issue"] " から連絡(例: "
       [:a {:href "https://github.com/cloud-itonami/cloud-itonami-isic-6399/issues/new?template=operator-interest.yml"} "Meta Job Search"]
