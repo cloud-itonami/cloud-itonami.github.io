@@ -40,10 +40,10 @@ jobs:
       - name: commit when changed
         working-directory: cloud-itonami/cloud-itonami.github.io
         run: |
-          if ! git diff --quiet index.html catalog.cljs; then
+          if ! git diff --quiet index.html catalog.cljs sitemap.xml robots.txt; then
             git config user.name "regenerate-catalog[bot]"
             git config user.email "noreply@github.com"
-            git add index.html catalog.cljs
+            git add index.html catalog.cljs sitemap.xml robots.txt
             git commit -m "chore(catalog): nightly regeneration from the registry"
             git push
           else

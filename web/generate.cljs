@@ -107,7 +107,7 @@
       " · blueprint " n-blueprint " · spec " n-spec " / 全 " n-total " 業種。"]]
 
     [:h2 "Sales wedge — 購入・運用支援する旗艦業種"]
-    [:p.sub "cloud-itonami が直接販売・運用支援するのは下記の旗艦ペア（Indeed 型 / kaonavi 型）です。"
+    [:p.sub "cloud-itonami が直接販売・運用支援するのは下記の旗艦業種（Indeed 型 / kaonavi 型 / 地域雇用型）です。"
       "狭い楔(wedge)としてここに集中し、残りの実装は下記 "
       [:strong "Library"] "（fork 自由・直接販売対象外）として公開します。"]
     [:div.card
@@ -118,6 +118,10 @@
      [:h3 [:a {:href "/cloud-itonami-isic-6310/"} "Talent Board"] " — kaonavi 型 HR SaaS の置き換え"]
      [:p.meta "保護属性は評価・配置転換の根拠にできず、帳票は目的に許された列のみ。"
       "人材データは自分の Store に残る。配置転換は常時人間承認 + from/to/承認者の台帳化。"]]
+    [:div.card
+     [:h3 [:a {:href "/cloud-itonami-isic-7810/"} "Placement Desk"] " — 地域雇用・人材紹介エージェンシーの置き換え"]
+     [:p.meta "候補者 intake・マッチング・紹介手数料の完全性(手数料 = 記録された年俸 × 料率)を実判定。"
+      "配置・手数料確定は常時人間承認 + from/to/承認者の台帳化。法域別の差別禁止・就労資格アセスメント。"]]
 
     [:h2 (str "Library — 全 actor 実装（fork 自由・直接販売対象外）· " n-implemented " implemented")]
     [:div.search
@@ -158,8 +162,9 @@
 
 ;; sitemap.xml / robots.txt -- generated from the same registry.edn :demo links
 ;; the catalog table renders (never hand-typed, can't drift from the registry).
-;; Only the 3 flagships carry a :demo entry today; as more verticals earn one
-;; (product-score climbs, ADR-2607121700-style), they appear here automatically.
+;; Every registry entry with a :demo (the flagship landings above plus the wider
+;; fleet's operator-console samples) is listed here, so sitemap discovery tracks
+;; the registry automatically as more verticals earn one.
 (def sitemap-urls (into ["https://cloud-itonami.github.io/"] demo-urls))
 (defn url-entry [u] (str "  <url><loc>" u "</loc></url>"))
 (fs/writeFileSync "../sitemap.xml"
