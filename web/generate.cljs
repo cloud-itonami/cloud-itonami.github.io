@@ -107,20 +107,27 @@
       " · blueprint " n-blueprint " · spec " n-spec " / 全 " n-total " 業種。"]]
 
     [:h2 "Sales wedge — 購入・運用支援する旗艦業種"]
-    [:p.sub "cloud-itonami が直接販売・運用支援するのは下記の旗艦業種（Indeed 型 / kaonavi 型 / 地域雇用型）です。"
+    [:p.sub "cloud-itonami が直接販売・運用支援するのは下記の旗艦業種"
+      "（求人アグリゲーター型 / HR SaaS 型 / 地域雇用・人材紹介型）です。"
       "狭い楔(wedge)としてここに集中し、残りの実装は下記 "
       [:strong "Library"] "（fork 自由・直接販売対象外）として公開します。"]
     [:div.card
-     [:h3 [:a {:href "/cloud-itonami-isic-6399/"} "Meta Job Search"] " — Indeed 型求人アグリゲーターの置き換え"]
-     [:p.meta "掲載拒否理由(募集終了・賃金不一致・転載許諾・差別広告)を実判定つきで公開。"
+     [:h3 [:a {:href "/cloud-itonami-isic-6399/"} "Meta Job Search"] " — 求人アグリゲーターの置き換え"]
+     [:p.meta "Indeed・LinkedIn Jobs・Glassdoor・ZipRecruiter・Monster・求人ボックス・Seek・Naukri 等、"
+      "世界各地の求人アグリゲーターが抱える課題を置き換える。"
+      "掲載拒否理由(募集終了・賃金不一致・転載許諾・差別広告)を実判定つきで公開。"
       "訂正・取下げは番号つき記録。職業安定法5条の4 をソフトウェアとして実装。6 法域対応。"]]
     [:div.card
-     [:h3 [:a {:href "/cloud-itonami-isic-6310/"} "Talent Board"] " — kaonavi 型 HR SaaS の置き換え"]
-     [:p.meta "保護属性は評価・配置転換の根拠にできず、帳票は目的に許された列のみ。"
+     [:h3 [:a {:href "/cloud-itonami-isic-6310/"} "Talent Board"] " — HR SaaS の置き換え"]
+     [:p.meta "Workday・SAP SuccessFactors・BambooHR・Personio・Rippling・HiBob・カオナビ 等、"
+      "世界各地の HR/人事情報システムが抱える課題を置き換える。"
+      "保護属性は評価・配置転換の根拠にできず、帳票は目的に許された列のみ。"
       "人材データは自分の Store に残る。配置転換は常時人間承認 + from/to/承認者の台帳化。"]]
     [:div.card
      [:h3 [:a {:href "/cloud-itonami-isic-7810/"} "Placement Desk"] " — 地域雇用・人材紹介エージェンシーの置き換え"]
-     [:p.meta "候補者 intake・マッチング・紹介手数料の完全性(手数料 = 記録された年俸 × 料率)を実判定。"
+     [:p.meta "Randstad・Adecco・ManpowerGroup・Robert Half・Bullhorn 等、"
+      "世界各地の人材紹介エージェンシー/ATS が抱える課題を置き換える。"
+      "候補者 intake・マッチング・紹介手数料の完全性(手数料 = 記録された年俸 × 料率)を実判定。"
       "配置・手数料確定は常時人間承認 + from/to/承認者の台帳化。法域別の差別禁止・就労資格アセスメント。"]]
 
     [:h2 (str "Library — 全 actor 実装（fork 自由・直接販売対象外）· " n-implemented " implemented")]
